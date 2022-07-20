@@ -1,52 +1,115 @@
-.main {
+.wrapper {
   padding: 1rem;
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card {
-  display: grid;
-  place-items: center;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  background-color: hsl(0, 0%, 10%);
-}
-
-.form {
+  width: 25rem;
+  margin: auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.header {
+  text-transform: uppercase;
+  flex-grow: 0;
+}
+
+.header_text {
+  font-weight: 400;
+  margin: 0;
+  word-break: keep-all;
+  letter-spacing: 0.6ch;
+}
+
+.text {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.header_subtext {
+  font-weight: 400;
+  font-size: 0.67rem;
+}
+
+.main {
+  width: 100%;
+  display: grid;
+  gap: 1rem;
+}
+
+.toolbelt_form {
+  display: grid;
   gap: 1.5rem;
 }
 
-.label {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  width: 100%;
-  text-transform: capitalize;
-  font-size: 0.8rem;
+.toolbelt_form input {
+  background: none;
+  border: none;
+  border-bottom: 1px solid white;
 }
 
-.excluded_ul {
+.flex_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+}
+
+.input {
+  width: 16ch;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.1rem 0.5rem;
+  gap: 1.7rem;
+  border-radius: 3px;
+  background-color: hsl(0, 0%, 17%);
+}
+
+.btn {
+  font-family: inherit;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 3px;
+  background-color: hsl(0, 0%, 17%);
+}
+
+.btn_action {
+  width: 100%;
+}
+
+.btn_stripped {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn_stripped:hover, .btn:hover {
+  opacity: 0.5;
+}
+
+.excluded_list {
   list-style: none;
-  margin: 0;
   padding: 0;
   display: flex;
   gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
-.btn_bubble {
-  cursor: pointer;
-  border-radius: 0.2rem;
-  border: none;
-  padding: 0.5rem;
-  background-color: hsl(0, 0%, 15%);
+.footer {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  gap: 1rem;
 }
 
-.btn_bubble:hover {
-  background-color: hsl(0, 0%, 20%);
+.footer a {
+  width: 100%;
 }
