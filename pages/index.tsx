@@ -32,9 +32,6 @@ const Home: NextPage = () => {
     setNewExcludedItemText(e.target.value);
   };
 
-  const handleIncrementItems = () => setNumOfItems((current) => current + 1);
-  const handleDecrementItems = () => setNumOfItems((current) => Math.max(current - 1, 1));
-
   const addNewExcludedItem = () => {
     const trimmedTextValue = newExcludedItemText.trim();
     if (!trimmedTextValue || excludedItems.includes(trimmedTextValue)) return;
@@ -123,7 +120,8 @@ const Home: NextPage = () => {
               <input
                 type="text"
                 name="username"
-                className={styles.input}
+                required={true}
+                className={styles.input_text}
                 value={githubUsername}
                 onChange={handleChangeUsername}
               />
@@ -134,15 +132,22 @@ const Home: NextPage = () => {
                 <button
                   type="button"
                   className={styles.btn_stripped}
-                  onClick={handleDecrementItems}
+                  onClick={() => setNumOfItems((current) => current - 1)}
                 >
                   -
                 </button>
-                <span className={styles.text}>{numofItems}</span>
+                <input
+                  className={styles.input_items}
+                  min={1}
+                  type="number"
+                  name="items"
+                  value={numofItems}
+                  onChange={(e) => setNumOfItems(Number(e.target.value))}
+                />
                 <button
                   type="button"
                   className={styles.btn_stripped}
-                  onClick={handleIncrementItems}
+                  onClick={() => setNumOfItems((current) => current + 1)}
                 >
                   +
                 </button>
@@ -155,7 +160,7 @@ const Home: NextPage = () => {
                   type="text"
                   name="exclude"
                   onKeyDown={handleExcludeFieldKeyPress}
-                  className={styles.input}
+                  className={styles.input_text}
                   value={newExcludedItemText}
                   onChange={handleChangeNewExcludedItemText}
                 />

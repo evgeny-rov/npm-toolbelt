@@ -42,12 +42,6 @@
   gap: 1.5rem;
 }
 
-.toolbelt_form input {
-  background: none;
-  border: none;
-  border-bottom: 1px solid white;
-}
-
 .flex_row {
   display: flex;
   align-items: center;
@@ -56,16 +50,34 @@
   gap: 0.5rem;
 }
 
-.input {
-  width: 16ch;
+.input_text {
+  width: 8rem;
+  background: none;
+  border: none;
+  border-bottom: 1px solid white;
+  font-family: inherit;
+}
+
+.input_items {
+  background: none;
+  border: none;
+  display: inline-block;
+  width: 5ch;
+  text-align: center;
+  font-family: inherit;
+}
+
+.input_items::-webkit-outer-spin-button,
+.input_items::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .counter {
+  width: 8rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.1rem 0.5rem;
-  gap: 1.7rem;
   border-radius: 3px;
   background-color: hsl(0, 0%, 17%);
 }
@@ -79,6 +91,7 @@
   border: none;
   border-radius: 3px;
   background-color: hsl(0, 0%, 17%);
+  font-family: inherit;
 }
 
 .btn_action {
@@ -89,6 +102,7 @@
   background: none;
   border: none;
   cursor: pointer;
+  font-family: inherit;
 }
 
 .btn_stripped:hover, .btn:hover {
@@ -107,6 +121,7 @@
   width: 100%;
   display: grid;
   place-items: center;
+  text-align: center;
   gap: 1rem;
 }
 
